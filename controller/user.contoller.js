@@ -22,7 +22,20 @@ const userController = {
         } catch(e) {
             res.status(500).send({ message: e.message })
         }
-    }
+    },
+    getUsers: async (req, res) => {
+        try {
+            const users = await User.find()
+            if(users) {
+                res.status(200).send(users)
+            }
+        } catch(err) {
+            res.status(500).send({ message: err.message })
+        }
+    },
+    getUser: async (req, res) => {},
+    updateUser: async (req, res) => {},
+    deleteUser: async (req, res) => {}
 }
 
 module.exports = userController;

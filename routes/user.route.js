@@ -4,12 +4,12 @@ const userController = require('../controller/user.contoller');
 
 router.post('/api/users/createuser', userController.createUser);
 
-router.get('/api/users/getusers');
+router.get('/api/users/getusers', userController.getUsers);
 
-router.get('/api/users/getuser');
+router.get('/api/users/getuser/:id', userController.getUser);
 
-router.put('/api/users/updateuser');
+router.put('/api/users/updateuser/:id', userController.updateUser);
 
-router.delete('/api/users/deleteuser');
+router.delete('/api/users/deleteuser/:id', userController.deleteUser);
 
 module.exports = router;
